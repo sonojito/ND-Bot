@@ -1,0 +1,20 @@
+{
+  "name": "nd-bot",
+  "version": "1.0.0",
+  "description": "Bot Discord con gestione ticket, moderazione e pannello Next.js",
+  "main": "bot/index.js",
+  "scripts": {
+    "start": "node bot/index.js",
+    "dev": "nodemon bot/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "mysql2": "^3.6.5",
+    "winston": "^3.11.0",
+    "discord-html-transcripts": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
