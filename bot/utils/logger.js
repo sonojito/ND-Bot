@@ -49,4 +49,7 @@ async function logToDiscord(client, type, title, description, fields = []) {
     }
 }
 
-module.exports = { ...logger, logToDiscord };
+// Esporta il logger con tutti i suoi metodi e aggiungi logToDiscord
+logger.logToDiscord = logToDiscord;
+
+module.exports = logger;
