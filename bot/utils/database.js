@@ -78,6 +78,20 @@ async function createTables() {
             )
         `);
 
+        // Tabella verifications (NUOVO)
+        await connection.query(`
+            CREATE TABLE IF NOT EXISTS verifications (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                guild_id VARCHAR(20) NOT NULL,
+                user_id VARCHAR(20) NOT NULL,
+                role_id VARCHAR(20) NOT NULL,
+                verified_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                INDEX idx_guild (guild_id),
+                INDEX idx_user (user_id),
+                INDEX idx_guild_user (guild_id, user_id)
+            )
+        `);
+
         logger.info('✅ Tabelle database create/verificate');
     } catch (error) {
         logger.error('Errore creazione tabelle:', error);
